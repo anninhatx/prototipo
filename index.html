@@ -11,30 +11,23 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+
     html, body {
       height: 100%;
       width: 100%;
       overflow-x: hidden;
     }
+
     body {
       background-image: url('imagens/turismo.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      position: relative;
+      display: flex;
+      flex-direction: column;
       color: white;
     }
-    /* camada translúcida leve sobre o fundo */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 40, 15, 0.4);  /* ajusta opacidade conforme quiser */
-      z-index: 0;
-    }
+
     header {
       position: fixed;
       top: 0;
@@ -48,15 +41,17 @@
       background: transparent;
       z-index: 10;
     }
+
     .nav-left, .nav-right {
       display: flex;
       gap: 40px;
       align-items: center;
     }
+
     header img {
       height: 80px;
-      z-index: 10;
     }
+
     nav a {
       text-decoration: none;
       font-weight: 600;
@@ -64,11 +59,12 @@
       transition: 0.3s;
       font-size: 16px;
       letter-spacing: 0.5px;
-      z-index: 10;
     }
+
     nav a:hover {
       color: #d8f3dc;
     }
+
     .hero {
       flex: 1;
       display: flex;
@@ -78,17 +74,35 @@
       text-align: center;
       padding: 0 20px;
       position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.25);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
       z-index: 1;
     }
+
     .hero h1 {
       font-size: 80px;
       font-weight: 700;
       margin-bottom: 15px;
     }
+
     .hero p {
       font-size: 22px;
       margin-bottom: 40px;
     }
+
     .btn {
       background-color: white;
       color: #2e4d31;
@@ -99,9 +113,11 @@
       transition: 0.3s;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+
     .btn:hover {
       background-color: #d8f3dc;
     }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -109,15 +125,19 @@
         height: auto;
         gap: 10px;
       }
+
       .nav-left, .nav-right {
         gap: 15px;
       }
+
       header img {
         height: 60px;
       }
+
       .hero h1 {
         font-size: 50px;
       }
+
       .hero p {
         font-size: 18px;
       }
@@ -129,10 +149,10 @@
     <nav class="nav-left">
       <a href="conceito.html">Conceito</a>
       <a href="mapa.html">Mapa</a>
-      <a href="guia-mistico.html">Guia Místico</a>
+      <a href="guia.html">Guia Místico</a>
     </nav>
 
-    <a href="index.html"><img src="imagens/logo.png" alt="Logo EcoMística"></a>
+    <img src="imagens/logo.png" alt="Logo EcoMística">
 
     <nav class="nav-right">
       <a href="comercio.html">Comércio Local</a>
@@ -150,4 +170,3 @@
   </section>
 </body>
 </html>
-
