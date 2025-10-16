@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMística - Página Interna</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    body {
+      background-image: url('../Imagens/turismo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding-bottom: 50px;
+    }
+
+    /* Camada translúcida */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.45);
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1;
+    }
+
+    header img {
+      height: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Botão de voltar */
+    .voltar {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      font-size: 28px;
+      color: #d8f3dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 2;
+    }
+
+    .voltar:hover {
+      color: white;
+    }
+
+    /* Área principal das imagens */
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    main img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        height: 60px;
+      }
+
+      .voltar {
+        font-size: 24px;
+        left: 20px;
+      }
+
+      main {
+        gap: 30px;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="voltar">←</a>
+    <img src="../Imagens/logo.png" alt="Logo EcoMística">
+  </header>
+
+  <main>
+    <img src="../Imagens/mapa.png" alt="Mapa do EcoMística">
+    <img src="../Imagens/qrcode.png" alt="QR Code do EcoMística">
+  </main>
+</body>
+</html>
 
