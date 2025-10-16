@@ -20,7 +20,8 @@
     }
 
     body {
-      background-image: url('../imagens/turismo.jpg');
+      /* caminho CORRETO: conceito.html está no mesmo nível de "imagens" */
+      background-image: url('imagens/turismo.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -140,8 +141,9 @@
 </head>
 <body>
   <header>
-    <a href="../index.html" class="voltar">←</a>
-    <img src="../imagens/logo.png" alt="Logo EcoMística">
+    <!-- volta para index.html no mesmo nível -->
+    <a href="index.html" class="voltar">←</a>
+    <img src="imagens/logo.png" alt="Logo EcoMística">
   </header>
 
   <section class="conteudo">
@@ -160,7 +162,7 @@
   </section>
 
   <div class="imagem-final">
-    <img src="../imagens/piramide.jpeg" alt="Pôr do sol em São Thomé das Letras">
+    <img src="imagens/piramide.jpeg" alt="Pôr do sol em São Thomé das Letras">
   </div>
 </body>
 </html>
