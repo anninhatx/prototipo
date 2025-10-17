@@ -1,126 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoMística - Página Interna</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMística - Gastronomia</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        html, body {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background-image: url('turismo.jpg'); /* Fundo no mesmo nível */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            padding-top: 120px; /* espaço para a logo */
-        }
+    body {
+      background-image: url('turismo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      padding-top: 120px;
+    }
 
-        /* Camada translúcida */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 40, 15, 0.45);
-            z-index: 0;
-        }
+    /* Camada translúcida */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.45);
+      z-index: 0;
+    }
 
-        header {
-            position: fixed; /* Fixa a logo no topo */
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            height: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-        }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      background: transparent;
+      z-index: 2;
+    }
 
-        header img {
-            height: 80px;
-        }
+    header img {
+      height: 80px;
+    }
 
-        /* Botão de voltar */
-        .voltar {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            font-size: 28px;
-            color: #d8f3dc;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            z-index: 3;
-        }
+    .voltar {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      font-size: 28px;
+      color: #d8f3dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 3;
+    }
 
-        .voltar:hover {
-            color: white;
-        }
+    .voltar:hover {
+      color: white;
+    }
 
-        /* Imagem centralizada */
-        .imagem-central {
-            position: relative;
-            z-index: 1;
-            width: 90%;
-            max-width: 900px;
-            margin-top: 50px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        }
+    main {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 1000px;
+      margin-bottom: 100px;
+    }
 
-        .imagem-central img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .bloco {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      color: #f8f9fa;
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 80px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
-        @media (max-width: 768px) {
-            header img {
-                height: 60px;
-            }
+    .bloco h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #e9f5ec;
+      font-weight: 600;
+    }
 
-            .voltar {
-                font-size: 24px;
-                left: 20px;
-            }
+    .bloco p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 18px;
+    }
 
-            .imagem-central {
-                max-width: 95%;
-            }
-        }
-    </style>
+    /* Galeria de imagens */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .galeria img {
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+    }
+
+    /* Links */
+    a {
+      color: #b7f7cc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        height: 60px;
+      }
+      .voltar {
+        font-size: 24px;
+        left: 20px;
+      }
+      .bloco {
+        padding: 25px;
+      }
+      .bloco p {
+        font-size: 16px;
+      }
+      .galeria img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
     <a href="index.html" class="voltar">←</a>
-    <header>
-        <img src="logo.png" alt="Logo EcoMística">
-    </header>
+    <img src="logo.png" alt="Logo EcoMística">
+  </header>
 
-    <div class="imagem-central">
-        <img src="alquimista.jpeg" alt="Alquimista">
-    </div>
+  <main>
+
+    <!-- 🌿 O ALQUIMISTA -->
+    <section class="bloco">
+      <h2>O Alquimista</h2>
+      <p>Localizado no coração de São Thomé das Letras, o Restaurante O Alquimista é muito mais do que um simples ponto gastronômico — é parte viva da história e da essência da cidade. Instalado em um casarão de pedra construído por volta de 1740, o local é tombado como patrimônio histórico e carrega em suas paredes a energia e o charme típicos da região.</p>
+      <p>Fundado em 1990, o restaurante nasceu com o propósito de resgatar o verdadeiro sabor da culinária mineira de raiz, valorizando ingredientes locais e o modo artesanal de preparo. A cozinha do Alquimista é uma celebração das tradições mineiras: os pratos são preparados em panelas de pedra, e as pizzas assadas na pedra mantêm o sabor rústico e autêntico que atrai visitantes de todos os cantos.</p>
+      <p>Com o passar dos anos, o Alquimista se tornou um dos símbolos gastronômicos de São Thomé das Letras, unindo história, cultura e boa comida em um ambiente acolhedor e repleto de personalidade. Suas mesas de madeira, a iluminação suave e a vista para as ruas de pedra transportam o visitante para um tempo em que o simples era sinônimo de bem-estar.</p>
+      <p>Mais do que um restaurante, o Alquimista é uma experiência sensorial e afetiva, onde cada prato conta uma história e cada detalhe carrega um pouco da alma mística de São Thomé das Letras.</p>
+
+      <p><strong>📍 Informações e Contato</strong><br>
+      📌 Endereço: Rua Capitão Pedro José Martins, nº 7 – Centro, São Thomé das Letras – MG<br>
+      📞 Telefone: (35) 3237-1320<br>
+      🌐 Site oficial: <a href="https://www.oalquimistarestaurantestl.com.br" target="_blank">www.oalquimistarestaurantestl.com.br</a><br>
+      📷 Instagram: <a href="https://www.instagram.com/oalquimistarestaurantestl" target="_blank">@oalquimistarestaurantestl</a><br>
+      🕰️ Funcionamento: Todos os dias, das 11h às 23h</p>
+
+      <div class="galeria">
+        <img src="alquimista.jpeg" alt="Restaurante O Alquimista">
+        <img src="alquimista1.jpeg" alt="Interior do Alquimista">
+        <img src="alquimista2.jpeg" alt="Comida do Alquimista">
+        <img src="alquimista3.jpeg" alt="Ambiente do Alquimista">
+      </div>
+    </section>
+
+    <!-- 🍕 SER CRIATIVO -->
+    <section class="bloco">
+      <h2>Ser Criativo – Pizza e Arte na Pedra</h2>
+      <p>A Pizzaria Ser Criativo começou sua trajetória em 1987, sob o nome Ser Lanches e Refeições Integrais. A proposta inicial era oferecer uma alimentação diferenciada: cafés da manhã completos com pães integrais, bolos, tortas, sanduíches e sopas, além de refeições com opções mais saudáveis e integrais.</p>
+      <p>Com o passar dos anos, o estabelecimento foi expandindo seu cardápio e seus atrativos. Por volta de 1999, a pizzaria começou a investir na especialidade que viria a marcar sua reputação: a pizza na pedra. A partir daí, diferentes variações foram adicionadas, e o ambiente ganhou também uma dimensão artística — daí o “Arte na Pedra” do nome.</p>
+      <p>O forno a lenha revestido com pedra de São Thomé das Letras é um ponto de destaque: a pizza não só é assada sob esse forno, mas também servida sobre pedra, o que reforça a ideia de rusticidade e identidade local.</p>
+      <p>Além disso, o ambiente mistura gastronomia e arte: quadros produzidos com areia e resina da pedra local, pinturas e composições artísticas assinadas pelo próprio pizzaiolo. Isso agrega valor sensorial e estético à experiência de visitar a pizzaria.</p>
+      <p>Com mais de 25 anos de tradição, Ser Criativo consolidou-se como referência em São Thomé das Letras para quem busca boa pizza (especialmente a pizza na pedra), ambiente acolhedor e uma combinação de sabores, estética local e atendimento familiar.</p>
+
+      <p><strong>📍 Endereço, Contatos e Informações Práticas</strong><br>
+      📌 Endereço: Praça Getúlio Vargas, nº 18 – Centro, São Thomé das Letras – MG<br>
+      📞 Telefone: (35) 3237-1266<br>
+      ✉️ E-mail: sercriativopizzanapedra@hotmail.com<br>
+      🌐 Website: <a href="https://sercriativopizzanapedra.webnode.com" target="_blank">Ser Criativo Pizzaria – Webnode</a><br>
+      🕰️ Funcionamento: A partir das 18h até cerca de meia-noite</p>
+
+      <div class="galeria">
+        <img src="pizza.jpg" alt="Pizzaria Ser Criativo">
+        <img src="pizza1.jpg" alt="Interior Ser Criativo">
+        <img src="pizza2.jpg" alt="Pizza na pedra Ser Criativo">
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
