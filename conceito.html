@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMística - Página Interna</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    body {
+      /* imagem de fundo */
+      background-image: url('turismo.jpg'); /* Alterado para o mesmo nível */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* camada translúcida escura sobre o fundo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.6);
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1;
+    }
+
+    header img {
+      height: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* botão de voltar */
+    .voltar {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      font-size: 28px;
+      color: #d8f3dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 2;
+    }
+
+    .voltar:hover {
+      color: white;
+    }
+
+    /* área do texto principal */
+    .conteudo {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      color: #f8f9fa;
+      padding: 40px;
+      border-radius: 20px;
+      margin: 60px 20px 40px;
+      text-align: justify;
+      line-height: 1.8;
+      font-size: 18px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .conteudo h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #e9f5ec;
+      font-weight: 600;
+    }
+
+    .conteudo p {
+      margin-bottom: 18px;
+    }
+
+    /* imagem final */
+    .imagem-final {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 900px;
+      margin: 30px 0 60px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .imagem-final img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        height: 60px;
+      }
+      .voltar {
+        font-size: 24px;
+        left: 20px;
+      }
+      .conteudo {
+        font-size: 16px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- volta para index.html no mesmo nível -->
+    <a href="index.html" class="voltar">←</a>
+    <img src="logo.png" alt="Logo EcoMística"> <!-- Alterado para o mesmo nível -->
+  </header>
+
+  <section class="conteudo">
+    <h1>São Thomé das Letras Inteligente</h1>
+    <p>Entre montanhas de quartzito, grutas misteriosas e cachoeiras encantadoras, São Thomé das Letras é um dos destinos mais singulares de Minas Gerais. Reconhecida por sua energia mística e por ser um ponto de encontro entre natureza, espiritualidade e cultura, a cidade atrai visitantes de todo o Brasil e do mundo em busca de paz, autoconhecimento e contato com o meio ambiente.</p>
+
+    <p>Mas, junto com toda essa magia, vem também um grande desafio: como equilibrar o crescimento do turismo com a preservação do patrimônio natural e cultural da cidade? É a partir dessa reflexão que nasce o projeto <strong>“São Thomé das Letras Inteligente”</strong>, uma iniciativa que busca unir tradição, tecnologia e sustentabilidade em um mesmo espaço.</p>
+
+    <p>Neste site, você encontrará um mapa interativo com os principais pontos turísticos e místicos da cidade, informações sobre comércios locais, guias turísticos, rotas sustentáveis e boas práticas ambientais. O objetivo é valorizar o comércio e os profissionais da região, incentivando o turismo consciente e o consumo responsável, fortalecendo assim a economia local.</p>
+
+    <p>Além disso, o projeto apresenta uma análise dos impactos ambientais provocados pelo turismo, como o acúmulo de lixo, a degradação de trilhas e cachoeiras, e o uso indevido dos recursos naturais. A proposta é transformar esses desafios em oportunidades, mostrando caminhos possíveis para uma São Thomé das Letras mais inteligente, conectada e ecológica, onde tecnologia e consciência ambiental caminham juntas.</p>
+
+    <p>Inspirada no conceito de Cidades Inteligentes, esta iniciativa propõe o uso de ferramentas digitais e de educação ambiental para promover um turismo mais organizado, sustentável e participativo. A ideia é criar uma cidade que cresce de forma equilibrada, respeitando sua identidade cultural e espiritual, enquanto se adapta aos desafios modernos com inovação e sensibilidade.</p>
+
+    <p><strong>Descubra São Thomé das Letras sob uma nova perspectiva:</strong> uma cidade que vibra energia positiva, protege sua natureza e evolui com inteligência. 🌱✨</p>
+  </section>
+
+  <!-- imagem adicionada -->
+  <div class="imagem-final">
+    <img src="sol.jpeg" alt="Imagem final">
+  </div>
+
+</body>
+</html>
