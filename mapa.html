@@ -30,7 +30,7 @@
             align-items: center;
             justify-content: flex-start;
             position: relative;
-            padding-top: 120px;
+            padding-top: 120px; /* espaço para não sobrepor o conteúdo */
         }
 
         /* camada translúcida */
@@ -45,28 +45,19 @@
             z-index: 0;
         }
 
-        header {
+        /* logo fixa no topo */
+        .logo-fixa {
             position: fixed;
-            top: 0;
-            width: 100%;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 20px;
-            background: transparent;
-            z-index: 2;
-        }
-
-        header img {
+            top: 20px; /* distância do topo */
+            left: 50%;
+            transform: translateX(-50%);
             height: 80px;
-            position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         /* botão de voltar */
         .voltar {
-            position: absolute;
+            position: fixed;
             top: 30px;
             left: 40px;
             font-size: 28px;
@@ -74,7 +65,7 @@
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
-            z-index: 3;
+            z-index: 4;
         }
 
         .voltar:hover {
@@ -102,7 +93,7 @@
         }
 
         @media (max-width: 768px) {
-            header img {
+            .logo-fixa {
                 height: 60px;
             }
 
@@ -119,14 +110,15 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="voltar">←</a>
-        <img src="logo.png" alt="Logo EcoMística"> <!-- Alterado para o mesmo nível -->
-    </header>
+    <!-- botão de voltar fixo -->
+    <a href="index.html" class="voltar">←</a>
+
+    <!-- logo fixa no topo -->
+    <img src="logo.png" alt="Logo EcoMística" class="logo-fixa">
 
     <main class="imagens-container">
-        <img src="mapa.png" alt="Mapa do projeto"> <!-- Alterado para o mesmo nível -->
-        <img src="qrcode.png" alt="QR Code do projeto"> <!-- Alterado para o mesmo nível -->
+        <img src="mapa.png" alt="Mapa do projeto">
+        <img src="qrcode.png" alt="QR Code do projeto">
     </main>
 </body>
 </html>
