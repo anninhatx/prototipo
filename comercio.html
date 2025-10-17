@@ -17,7 +17,6 @@
       height: 100%;
       width: 100%;
       overflow-x: hidden;
-      overflow-y: auto;
       scroll-behavior: smooth;
     }
 
@@ -26,15 +25,11 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       position: relative;
-      padding-top: 120px;
+      color: #f2f2f2;
     }
 
-    /* Camada translúcida */
+    /* Fundo mais translúcido e suave */
     body::before {
       content: "";
       position: fixed;
@@ -42,21 +37,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 40, 15, 0.45);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(3px);
       z-index: 0;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      height: 90px;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 20px;
-      background: transparent;
-      z-index: 2;
+      z-index: 3;
     }
 
     header img {
@@ -65,14 +62,14 @@
 
     .voltar {
       position: absolute;
-      top: 30px;
+      top: 35px;
       left: 40px;
-      font-size: 28px;
+      font-size: 26px;
       color: #d8f3dc;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
-      z-index: 3;
+      z-index: 4;
     }
 
     .voltar:hover {
@@ -84,32 +81,28 @@
       z-index: 1;
       width: 90%;
       max-width: 1000px;
+      margin: 140px auto 80px auto;
+    }
+
+    section {
       margin-bottom: 100px;
     }
 
-    .bloco {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(6px);
-      color: #f8f9fa;
-      padding: 40px;
-      border-radius: 20px;
-      margin-bottom: 80px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
-    .bloco h2 {
+    section h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 25px;
-      color: #e9f5ec;
       font-weight: 600;
+      color: #eaf7e9;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 
-    .bloco p {
+    section p {
       font-size: 18px;
       line-height: 1.8;
       text-align: justify;
       margin-bottom: 18px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
     /* Galeria de imagens */
@@ -117,21 +110,25 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin-top: 25px;
     }
 
     .galeria img {
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
       width: 100%;
-      max-width: 440px;
+      max-width: 380px; /* 🔹 menor que antes */
       height: auto;
+      transition: 0.3s ease;
     }
 
-    /* Links */
+    .galeria img:hover {
+      transform: scale(1.03);
+    }
+
     a {
-      color: #b7f7cc;
+      color: #b9f6ca;
       font-weight: 600;
       text-decoration: none;
     }
@@ -142,19 +139,28 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        height: 80px;
+      }
+
       header img {
         height: 60px;
       }
+
       .voltar {
         font-size: 24px;
         left: 20px;
+        top: 25px;
       }
-      .bloco {
-        padding: 25px;
+
+      main {
+        margin-top: 110px;
       }
-      .bloco p {
+
+      section p {
         font-size: 16px;
       }
+
       .galeria img {
         max-width: 100%;
       }
@@ -169,9 +175,8 @@
   </header>
 
   <main>
-
     <!-- 🌿 O ALQUIMISTA -->
-    <section class="bloco">
+    <section>
       <h2>O Alquimista</h2>
       <p>Localizado no coração de São Thomé das Letras, o Restaurante O Alquimista é muito mais do que um simples ponto gastronômico — é parte viva da história e da essência da cidade. Instalado em um casarão de pedra construído por volta de 1740, o local é tombado como patrimônio histórico e carrega em suas paredes a energia e o charme típicos da região.</p>
       <p>Fundado em 1990, o restaurante nasceu com o propósito de resgatar o verdadeiro sabor da culinária mineira de raiz, valorizando ingredientes locais e o modo artesanal de preparo. A cozinha do Alquimista é uma celebração das tradições mineiras: os pratos são preparados em panelas de pedra, e as pizzas assadas na pedra mantêm o sabor rústico e autêntico que atrai visitantes de todos os cantos.</p>
@@ -194,7 +199,7 @@
     </section>
 
     <!-- 🍕 SER CRIATIVO -->
-    <section class="bloco">
+    <section>
       <h2>Ser Criativo – Pizza e Arte na Pedra</h2>
       <p>A Pizzaria Ser Criativo começou sua trajetória em 1987, sob o nome Ser Lanches e Refeições Integrais. A proposta inicial era oferecer uma alimentação diferenciada: cafés da manhã completos com pães integrais, bolos, tortas, sanduíches e sopas, além de refeições com opções mais saudáveis e integrais.</p>
       <p>Com o passar dos anos, o estabelecimento foi expandindo seu cardápio e seus atrativos. Por volta de 1999, a pizzaria começou a investir na especialidade que viria a marcar sua reputação: a pizza na pedra. A partir daí, diferentes variações foram adicionadas, e o ambiente ganhou também uma dimensão artística — daí o “Arte na Pedra” do nome.</p>
