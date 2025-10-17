@@ -30,7 +30,6 @@
     position: relative;
   }
 
-  /* Fundo translúcido leve */
   body::before {
     content: "";
     position: fixed;
@@ -44,8 +43,8 @@
 
   /* Header com logo e seta */
   header {
-    position: fixed;
-    top: 0;
+    position: absolute; /* Fica no topo da página, desaparece ao rolar */
+    top: 10px;
     left: 0;
     width: 100%;
     display: flex;
@@ -106,7 +105,7 @@
   .galeria {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* permite quebrar linha se necessário */
     gap: 15px;
     margin-top: 25px;
   }
@@ -119,7 +118,7 @@
     transition: 0.3s ease;
   }
 
-  /* Ajuste de tamanho proporcional por quantidade de imagens */
+  /* Ajuste proporcional por quantidade de imagens */
   .galeria.um img {
     width: 60%;
     max-width: 600px;
@@ -204,7 +203,7 @@
       📷 Instagram: <a href="https://www.instagram.com/oalquimistarestaurantestl" target="_blank">@oalquimistarestaurantestl</a><br>
       🕰️ Funcionamento: Todos os dias, das 11h às 23h</p>
 
-      <div class="galeria.quatro">
+      <div class="galeria quatro">
         <img src="alquimista.jpeg" alt="">
         <img src="alquimista1.jpeg" alt="">
         <img src="alquimista2.jpeg" alt="">
@@ -228,7 +227,7 @@
       🌐 Website: <a href="https://sercriativopizzaria.webnode.com.br" target="_blank">www.sercriativopizzaria.webnode.com.br</a><br>
       🕰️ Horário: geralmente à noite, das 18h à meia-noite</p>
 
-      <div class="galeria.tres">
+      <div class="galeria tres">
         <img src="pizza.jpg" alt="">
         <img src="pizza1.jpg" alt="">
         <img src="pizza2.jpg" alt="">
@@ -250,7 +249,7 @@
       📷 Instagram / Facebook: <a href="https://www.instagram.com/pousadavivastl" target="_blank">@pousadavivastl</a><br>
       🕰️ Funcionamento: Atendimento diário para hospedagem, check-in a partir das 14h e check-out até 12h</p>
 
-      <div class="galeria.tres">
+      <div class="galeria tres">
         <img src="viva.jpeg" alt="">
         <img src="viva1.jpeg" alt="">
         <img src="viva2.jpeg" alt="">
@@ -261,7 +260,7 @@
     <section>
       <h2>Pousada Arco-Íris</h2>
       <p>Situada no coração de São Thomé das Letras, a Pousada Arco-Íris é um verdadeiro refúgio de charme e aconchego. Com mais de mil metros quadrados de construção horizontal, a pousada destaca-se pela preservação de sua arquitetura histórica, priorizando espaços abertos e ambientes acolhedores.</p>
-      <p>O café da manhã é servido em um salão histórico da época do Império, considerado patrimônio histórico da cidade. Neste ambiente, os hóspedes podem desfrutar de um cardápio variado, com destaque para sucos naturais, pães de queijo e doces caseiros, preparados com carinho e dedicação.</p>
+      <p>O café da manhã é servido em um salão histórico da época do Império, considerado patrimônio histórico da cidade. Neste ambiente, os hóspedes podem desfrutar um cardápio variado, com destaque para sucos naturais, pães de queijo e doces caseiros, preparados com carinho e dedicação.</p>
       <p>Além do conforto e da tradição, a pousada oferece uma gama de comodidades modernas, incluindo piscina coberta, sauna, serviço de quarto e Wi-Fi gratuito. Os quartos são equipados com ar-condicionado, TV de tela plana e banheiro privativo, proporcionando uma estadia agradável e relaxante.</p>
       <p>Com uma localização privilegiada, a Pousada Arco-Íris é ideal para quem busca tranquilidade, conforto e uma experiência imersiva na cultura e história de São Thomé das Letras.</p>
 
@@ -272,7 +271,7 @@
       📷 Instagram: <a href="https://www.instagram.com/pousadaarcoirisst" target="_blank">@pousadaarcoirisst</a><br>
       🕰️ Funcionamento: Recepção 24 horas, com check-in a partir das 14h e check-out até às 12h</p>
 
-      <div class="galeria.tres">
+      <div class="galeria tres">
         <img src="arco.jpeg" alt="">
         <img src="arco1.jpeg" alt="">
         <img src="arco2.jpeg" alt="">
@@ -283,9 +282,8 @@
     <section>
       <h2>Cachoeira Véu de Noiva</h2>
       <p>A Cachoeira Véu de Noiva é uma das mais famosas de São Thomé das Letras, localizada a cerca de 12 km do centro da cidade. Recebe esse nome por causa do formato de sua queda, que lembra um delicado véu de noiva. Com aproximadamente 25 metros de altura, forma um poço natural ideal para banho, além de abrigar outras quedas menores, como a Cachoeira Paraíso e o Poço Lua de Mel.</p>
-      <p>O local é cercado por trilhas em meio à vegetação nativa, proporcionando um passeio agradável para famílias e aventureiros. É um ponto muito visitado tanto por turistas que buscam contato com a natureza quanto por fotógrafos que querem capturar a beleza cênica do lugar.</p>
 
-      <div class="galeria.um">
+      <div class="galeria um">
         <img src="veu.jpeg" alt="">
       </div>
     </section>
@@ -295,7 +293,7 @@
       <h2>Cachoeira Vale das Borboletas</h2>
       <p>Situada a cerca de 3,5 km do centro da cidade, a Cachoeira Vale das Borboletas é um local encantador com águas abundantes e natureza exuberante. Durante o passeio, é possível observar borboletas de diversos tamanhos, cores e tipos diferentes, tornando a experiência ainda mais especial.</p>
 
-      <div class="galeria.um">
+      <div class="galeria um">
         <img src="borboletas.jpeg" alt="">
       </div>
     </section>
@@ -305,7 +303,7 @@
       <h2>Gruta do Sobradinho</h2>
       <p>A Gruta do Sobradinho é uma formação arenítica com aproximadamente 100 metros de extensão e 6 metros de altura. Localizada entre as montanhas, é um local tranquilo e hospitaleiro, com uma comunidade simples e acolhedora.</p>
 
-      <div class="galeria.um">
+      <div class="galeria um">
         <img src="gruta.jpeg" alt="">
       </div>
     </section>
@@ -314,7 +312,7 @@
 <script>
 window.addEventListener('scroll', function() {
     const header = document.getElementById('topo');
-    if(window.scrollY > 50) {
+    if(window.scrollY > 0) {
         header.style.opacity = '0';
         header.style.pointerEvents = 'none';
     } else {
