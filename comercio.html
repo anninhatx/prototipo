@@ -25,11 +25,10 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      position: relative;
       color: #f2f2f2;
+      position: relative;
     }
 
-    /* Fundo mais translúcido */
     body::before {
       content: "";
       position: fixed;
@@ -41,7 +40,7 @@
       z-index: 0;
     }
 
-    /* Logo fixa e transparente, sem caixa */
+    /* Header fixo */
     header {
       position: fixed;
       top: 0;
@@ -50,8 +49,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 3;
-      padding: 15px 0;
+      padding: 10px 0;
+      z-index: 10;
     }
 
     header img {
@@ -60,13 +59,13 @@
 
     .voltar {
       position: fixed;
-      top: 25px;
+      top: 20px;
       left: 20px;
       font-size: 26px;
       color: #d8f3dc;
-      text-decoration: none;
       font-weight: bold;
-      z-index: 4;
+      text-decoration: none;
+      z-index: 11;
       transition: 0.3s;
     }
 
@@ -79,7 +78,7 @@
       z-index: 1;
       width: 90%;
       max-width: 1000px;
-      margin: 140px auto 80px auto;
+      margin: 120px auto 80px auto;
     }
 
     section {
@@ -103,7 +102,6 @@
       text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
-    /* Galeria de imagens responsiva */
     .galeria {
       display: flex;
       flex-wrap: wrap;
@@ -112,20 +110,26 @@
       margin-top: 25px;
     }
 
-    /* Imagens com tamanho coerente */
-    .galeria img {
+    /* Galeria com 3 imagens lado a lado */
+    .galeria.tres img {
+      width: calc(33.33% - 10px);
+      height: auto;
+      max-width: 320px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      width: calc(33.33% - 10px); /* padrão para 3 imagens lado a lado */
-      max-width: 320px;
-      height: auto;
+      object-fit: cover;
       transition: 0.3s ease;
     }
 
-    /* Se houver 4 imagens, usa 2x2 */
+    /* Galeria com 4 imagens 2x2 */
     .galeria.quatro img {
       width: calc(50% - 10px);
+      height: auto;
       max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      object-fit: cover;
+      transition: 0.3s ease;
     }
 
     .galeria img:hover {
@@ -151,18 +155,18 @@
       .voltar {
         font-size: 24px;
         left: 15px;
-        top: 20px;
+        top: 15px;
       }
 
       main {
-        margin-top: 120px;
+        margin-top: 110px;
       }
 
       section p {
         font-size: 16px;
       }
 
-      .galeria img {
+      .galeria.tres img, .galeria.quatro img {
         width: 100%;
         max-width: 100%;
       }
@@ -180,7 +184,18 @@
     <!-- O ALQUIMISTA -->
     <section>
       <h2>O Alquimista</h2>
-      <p>Localizado no coração de São Thomé das Letras...</p>
+      <p>Localizado no coração de São Thomé das Letras, o Restaurante O Alquimista é muito mais do que um simples ponto gastronômico — é parte viva da história e da essência da cidade. Instalado em um casarão de pedra construído por volta de 1740, o local é tombado como patrimônio histórico e carrega em suas paredes a energia e o charme típicos da região.</p>
+      <p>Fundado em 1990, o restaurante nasceu com o propósito de resgatar o verdadeiro sabor da culinária mineira de raiz, valorizando ingredientes locais e o modo artesanal de preparo. A cozinha do Alquimista é uma celebração das tradições mineiras: os pratos são preparados em panelas de pedra, e as pizzas assadas na pedra mantêm o sabor rústico e autêntico que atrai visitantes de todos os cantos.</p>
+      <p>Com o passar dos anos, o Alquimista se tornou um dos símbolos gastronômicos de São Thomé das Letras, unindo história, cultura e boa comida em um ambiente acolhedor e repleto de personalidade. Suas mesas de madeira, a iluminação suave e a vista para as ruas de pedra transportam o visitante para um tempo em que o simples era sinônimo de bem-estar.</p>
+      <p>Mais do que um restaurante, o Alquimista é uma experiência sensorial e afetiva, onde cada prato conta uma história e cada detalhe carrega um pouco da alma mística de São Thomé das Letras.</p>
+
+      <p><strong>📍 Informações e Contato</strong><br>
+      📌 Endereço: Rua Capitão Pedro José Martins, nº 7 – Centro, São Thomé das Letras – MG<br>
+      📞 Telefone: (35) 3237-1320<br>
+      🌐 Site oficial: <a href="https://www.oalquimistarestaurantestl.com.br" target="_blank">www.oalquimistarestaurantestl.com.br</a><br>
+      📷 Instagram: <a href="https://www.instagram.com/oalquimistarestaurantestl" target="_blank">@oalquimistarestaurantestl</a><br>
+      🕰️ Funcionamento: Todos os dias, das 11h às 23h</p>
+
       <div class="galeria quatro">
         <img src="alquimista.jpeg" alt="">
         <img src="alquimista1.jpeg" alt="">
@@ -192,8 +207,20 @@
     <!-- SER CRIATIVO -->
     <section>
       <h2>Ser Criativo – Pizza e Arte na Pedra</h2>
-      <p>A Pizzaria Ser Criativo começou sua trajetória...</p>
-      <div class="galeria">
+      <p>A Pizzaria Ser Criativo começou sua trajetória em 1987, sob o nome Ser Lanches e Refeições Integrais. A proposta inicial era oferecer uma alimentação diferenciada: cafés da manhã completos com pães integrais, bolos, tortas, sanduíches e sopas, além de refeições com opções mais saudáveis e integrais.</p>
+      <p>Com o passar dos anos, o estabelecimento foi expandindo seu cardápio e seus atrativos. Por volta de 1999, a pizzaria começou a investir na especialidade que viria a marcar sua reputação: a pizza na pedra. A partir daí, diferentes variações foram adicionadas, e o ambiente ganhou também uma dimensão artística — daí o “Arte na Pedra” do nome.</p>
+      <p>O forno a lenha revestido com pedra de São Thomé das Letras é um ponto de destaque: a pizza não só é assada sob esse forno, mas também servida sobre pedra, o que reforça a ideia de rusticidade e identidade local.</p>
+      <p>Além disso, o ambiente mistura gastronomia e arte: quadros produzidos com areia e resina da pedra local, pinturas e composições artísticas assinadas pelo próprio pizzaiolo. Isso agrega valor sensorial e estético à experiência de visitar a pizzaria.</p>
+      <p>Com mais de 25 anos de tradição, Ser Criativo consolidou-se como referência em São Thomé das Letras para quem busca boa pizza (especialmente a pizza na pedra), ambiente acolhedor e uma combinação de sabores, estética local e atendimento familiar.</p>
+
+      <p><strong>📍 Endereço, Contatos e Informações Práticas</strong><br>
+      📌 Endereço: Praça Getúlio Vargas, nº 18 – Centro, São Thomé das Letras, MG<br>
+      📞 Telefone: (35) 3237-1266<br>
+      📧 E-mail: <a href="mailto:sercriativopizzanapedra@hotmail.com">sercriativopizzanapedra@hotmail.com</a><br>
+      🌐 Website / perfil online: Ser Criativo Pizzaria – Webnode (“Sobre Nós”)<br>
+      🕰️ Horário: geralmente à noite, das 18h à meia-noite</p>
+
+      <div class="galeria tres">
         <img src="pizza.jpg" alt="">
         <img src="pizza1.jpg" alt="">
         <img src="pizza2.jpg" alt="">
