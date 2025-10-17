@@ -6,11 +6,13 @@
   <title>EcoMística - Gastronomia</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     html, body {
@@ -29,7 +31,7 @@
       position: relative;
     }
 
-    /* Fundo translúcido mais leve */
+    /* Fundo translúcido mais leve, permitindo melhor leitura */
     body::before {
       content: "";
       position: fixed;
@@ -37,13 +39,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.25); /* menos opaco */
+      background: rgba(0, 0, 0, 0.55); /* mais transparente */
       z-index: 0;
     }
 
-    /* Header fixo apenas no topo inicial */
     header {
-      position: absolute; /* apenas no topo inicial */
+      position: fixed; /* fixo no topo */
       top: 0;
       left: 0;
       width: 100%;
@@ -59,7 +60,7 @@
     }
 
     .voltar {
-      position: absolute;
+      position: fixed; /* fixo no topo */
       top: 20px;
       left: 20px;
       font-size: 26px;
@@ -90,9 +91,9 @@
       text-align: center;
       font-size: 32px;
       margin-bottom: 25px;
-      font-weight: 600;
+      font-weight: 700;
       color: #eaf7e9;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
 
     section p {
@@ -100,7 +101,7 @@
       line-height: 1.8;
       text-align: justify;
       margin-bottom: 18px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
 
     .galeria {
@@ -111,20 +112,10 @@
       margin-top: 25px;
     }
 
-    .galeria.tres img {
-      width: calc(33.33% - 10px);
+    .galeria.tres img, .galeria.quatro img {
+      width: calc(25% - 10px); /* agora as quatro ficam lado a lado */
       height: auto;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      object-fit: cover;
-      transition: 0.3s ease;
-    }
-
-    .galeria.quatro img {
-      width: calc(50% - 10px);
-      height: auto;
-      max-width: 280px;
+      max-width: 220px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
       object-fit: cover;
@@ -137,7 +128,7 @@
 
     a {
       color: #b9f6ca;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: none;
     }
 
@@ -228,3 +219,4 @@
   </main>
 </body>
 </html>
+
