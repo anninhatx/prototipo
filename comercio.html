@@ -42,35 +42,32 @@
     z-index: 0;
   }
 
-  /* Logo fixa no topo */
+  /* Header com logo e seta que desaparece ao scroll */
   header {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 10px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
     z-index: 10;
-    pointer-events: none;
+    transition: opacity 0.5s ease;
   }
 
   header img {
     height: 80px;
   }
 
-  /* Seta fixa no topo */
   .voltar {
-    position: fixed;
-    top: 20px;
+    position: absolute;
+    top: 10px;
     left: 20px;
     font-size: 26px;
     color: #d8f3dc;
     font-weight: bold;
     text-decoration: none;
-    z-index: 11;
-    transition: 0.3s;
+    transition: color 0.3s;
   }
 
   .voltar:hover {
@@ -82,7 +79,7 @@
     z-index: 1;
     width: 90%;
     max-width: 1000px;
-    margin: 120px auto 80px auto; /* Espaço para o header fixo */
+    margin: 120px auto 80px auto; /* espaço para o header */
   }
 
   section {
@@ -177,13 +174,13 @@
 </head>
 
 <body>
-  <header>
+  <header id="topo">
     <img src="logo.png" alt="Logo EcoMística">
     <a href="index.html" class="voltar">←</a>
   </header>
 
   <main>
-    <!-- Conteúdo do Alquimista -->
+    <!-- Alquimista -->
     <section>
       <h2>O Alquimista</h2>
       <p>Localizado no coração de São Thomé das Letras, o Restaurante O Alquimista é muito mais do que um simples ponto gastronômico — é parte viva da história e da essência da cidade. Instalado em um casarão de pedra construído por volta de 1740, o local é tombado como patrimônio histórico e carrega em suas paredes a energia e o charme típicos da região.</p>
@@ -206,7 +203,7 @@
       </div>
     </section>
 
-    <!-- Conteúdo da Pizzaria Ser Criativo -->
+    <!-- Ser Criativo -->
     <section>
       <h2>Ser Criativo – Pizza e Arte na Pedra</h2>
       <p>A Pizzaria Ser Criativo começou sua trajetória em 1987, sob o nome Ser Lanches e Refeições Integrais. A proposta inicial era oferecer uma alimentação diferenciada: cafés da manhã completos com pães integrais, bolos, tortas, sanduíches e sopas, além de refeições com opções mais saudáveis e integrais.</p>
@@ -229,5 +226,18 @@
       </div>
     </section>
   </main>
+
+<script>
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('topo');
+    if(window.scrollY > 50) {
+        header.style.opacity = '0'; // desaparece ao scroll
+        header.style.pointerEvents = 'none';
+    } else {
+        header.style.opacity = '1';
+        header.style.pointerEvents = 'auto';
+    }
+});
+</script>
 </body>
 </html>
