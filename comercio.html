@@ -1,180 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoMística - Gastronomia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoMística - Gastronomia</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
 
-    body {
-      background-image: url('turismo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #f2f2f2;
-      position: relative;
-    }
+  body {
+    background-image: url('turismo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f2f2f2;
+    position: relative;
+  }
 
-    /* Fundo translúcido leve */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55); /* mais transparente */
-      z-index: 0;
-    }
+  /* Fundo translúcido leve */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+  }
 
-    /* Logo fixa no topo */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 0;
-      z-index: 5;
-      pointer-events: none; /* permite clicar no conteúdo sem interferir */
-    }
+  /* Logo fixa no topo */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 10;
+    pointer-events: none;
+  }
 
+  header img {
+    height: 80px;
+  }
+
+  /* Seta fixa no topo */
+  .voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    color: #d8f3dc;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 11;
+    transition: 0.3s;
+  }
+
+  .voltar:hover {
+    color: white;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1000px;
+    margin: 120px auto 80px auto; /* Espaço para o header fixo */
+  }
+
+  section {
+    margin-bottom: 100px;
+  }
+
+  section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #eaf7e9;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  }
+
+  section p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 18px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .galeria.tres img {
+    width: calc(33% - 10px);
+    max-width: 220px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    object-fit: cover;
+    transition: 0.3s ease;
+  }
+
+  .galeria.quatro img {
+    width: calc(25% - 10px);
+    max-width: 220px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    object-fit: cover;
+    transition: 0.3s ease;
+  }
+
+  .galeria img:hover {
+    transform: scale(1.03);
+  }
+
+  a {
+    color: #b9f6ca;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
     header img {
-      height: 80px;
+      height: 60px;
     }
 
-    /* Seta fixa no topo */
     .voltar {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 26px;
-      color: #d8f3dc;
-      font-weight: bold;
-      text-decoration: none;
-      z-index: 6;
-      transition: 0.3s;
-    }
-
-    .voltar:hover {
-      color: white;
+      font-size: 24px;
+      left: 15px;
+      top: 15px;
     }
 
     main {
-      position: relative;
-      z-index: 1;
-      width: 90%;
-      max-width: 1000px;
-      margin: 120px auto 80px auto; /* espaço para o header */
-    }
-
-    section {
-      margin-bottom: 100px;
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 25px;
-      font-weight: 700;
-      color: #eaf7e9;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      margin-top: 110px;
     }
 
     section p {
-      font-size: 18px;
-      line-height: 1.8;
-      text-align: justify;
-      margin-bottom: 18px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 25px;
+      font-size: 16px;
     }
 
     .galeria.tres img, .galeria.quatro img {
-      width: calc(25% - 10px);
-      height: auto;
-      max-width: 220px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      object-fit: cover;
-      transition: 0.3s ease;
+      width: 100%;
+      max-width: 100%;
     }
-
-    .galeria img:hover {
-      transform: scale(1.03);
-    }
-
-    a {
-      color: #b9f6ca;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      header img {
-        height: 60px;
-      }
-
-      .voltar {
-        font-size: 24px;
-        left: 15px;
-        top: 15px;
-      }
-
-      main {
-        margin-top: 110px;
-      }
-
-      section p {
-        font-size: 16px;
-      }
-
-      .galeria.tres img, .galeria.quatro img {
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
   <header>
-    <a href="index.html" class="voltar">←</a>
     <img src="logo.png" alt="Logo EcoMística">
+    <a href="index.html" class="voltar">←</a>
   </header>
 
   <main>
-    <!-- O ALQUIMISTA -->
+    <!-- Conteúdo do Alquimista -->
     <section>
       <h2>O Alquimista</h2>
       <p>Localizado no coração de São Thomé das Letras, o Restaurante O Alquimista é muito mais do que um simples ponto gastronômico — é parte viva da história e da essência da cidade. Instalado em um casarão de pedra construído por volta de 1740, o local é tombado como patrimônio histórico e carrega em suas paredes a energia e o charme típicos da região.</p>
@@ -197,12 +206,12 @@
       </div>
     </section>
 
-    <!-- SER CRIATIVO -->
+    <!-- Conteúdo da Pizzaria Ser Criativo -->
     <section>
       <h2>Ser Criativo – Pizza e Arte na Pedra</h2>
       <p>A Pizzaria Ser Criativo começou sua trajetória em 1987, sob o nome Ser Lanches e Refeições Integrais. A proposta inicial era oferecer uma alimentação diferenciada: cafés da manhã completos com pães integrais, bolos, tortas, sanduíches e sopas, além de refeições com opções mais saudáveis e integrais.</p>
       <p>Com o passar dos anos, o estabelecimento foi expandindo seu cardápio e seus atrativos. Por volta de 1999, a pizzaria começou a investir na especialidade que viria a marcar sua reputação: a pizza na pedra. A partir daí, diferentes variações foram adicionadas, e o ambiente ganhou também uma dimensão artística — daí o “Arte na Pedra” do nome.</p>
-      <p>O forno a lenha revestido com pedra de São Thomé das Letras é um ponto de destaque: a pizza não só é assada sob esse forno, mas também servida sobre pedra, o que reforça a ideia de rusticidade e identidade local.</p>
+      <p>O forno a lenha revestido com pedra de São Tomé das Letras é um ponto de destaque: a pizza não só é assada sob esse forno, mas também servida sobre pedra, o que reforça a ideia de rusticidade e identidade local.</p>
       <p>Além disso, o ambiente mistura gastronomia e arte: quadros produzidos com areia e resina da pedra local, pinturas e composições artísticas assinadas pelo próprio pizzaiolo. Isso agrega valor sensorial e estético à experiência de visitar a pizzaria.</p>
       <p>Com mais de 25 anos de tradição, Ser Criativo consolidou-se como referência em São Thomé das Letras para quem busca boa pizza (especialmente a pizza na pedra), ambiente acolhedor e uma combinação de sabores, estética local e atendimento familiar.</p>
 
