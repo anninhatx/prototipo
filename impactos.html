@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impactos Ambientais - EcoMística</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-image: url('turismo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 120px;
+      color: #f8f9fa;
+    }
+
+    /* Camada escura translúcida */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.55);
+      z-index: 0;
+    }
+
+    /* Cabeçalho */
+    header {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    header img {
+      height: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Botão de voltar */
+    .voltar {
+      position: fixed;
+      top: 30px;
+      left: 40px;
+      font-size: 28px;
+      color: #d8f3dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 3;
+    }
+
+    .voltar:hover {
+      color: #ffffff;
+    }
+
+    /* Conteúdo */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: calc(100% - 40px);
+      padding: 30px 20px;
+      margin: 20px 0 80px;
+      color: #f8f9fa;
+      line-height: 1.8;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    h2 {
+      color: #b7efc5;
+      margin-top: 25px;
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+      font-size: 18px;
+    }
+
+    /* Link Feedback */
+    .link {
+      color: #b7efc5;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header img { height: 60px; }
+      .voltar { font-size: 24px; left: 20px; }
+      main { padding: 22px 16px; }
+      h1 { font-size: 22px; }
+      p { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="voltar">←</a>
+
+  <header>
+    <img src="logo.png" alt="Logo EcoMística">
+  </header>
+
+  <main>
+    <h1>Impactos Ambientais em São Tomé das Letras</h1>
+
+    <p>São Tomé das Letras é um dos lugares mais encantadores de Minas, com suas cachoeiras, grutas, mirantes e toda aquela energia mística que atrai visitantes o ano inteiro. Mas, junto com o crescimento do turismo, surgem também alguns impactos ambientais que precisam ser lembrados e combatidos.</p>
+
+    <h2>🌿 Poluição e lixo</h2>
+    <p>Infelizmente, muitos turistas acabam deixando lixo nas trilhas e cachoeiras. Além de prejudicar o visual do lugar, o lixo contamina o solo e a água, afetando os animais e a natureza.</p>
+
+    <h2>🚗 Excesso de veículos</h2>
+    <p>O uso constante de carros e motos em áreas pequenas gera poluição e barulho, o que interfere no equilíbrio da região e afasta a tranquilidade típica de São Tomé.</p>
+
+    <h2>💧 Danos aos rios e cachoeiras</h2>
+    <p>Com o alto número de visitantes, as margens dos rios sofrem erosão, e a água pode ser contaminada por produtos químicos e resíduos deixados pelos turistas.</p>
+
+    <h2>🪨 Desgaste das grutas e formações naturais</h2>
+    <p>Toques, pichações e até o pisoteio em locais delicados acabam danificando formações rochosas milenares — algo que a natureza levou séculos pra criar.</p>
+
+    <h2>🦜 Perturbação da fauna</h2>
+    <p>O barulho e a movimentação intensa espantam animais e alteram o comportamento da vida local, prejudicando todo o ecossistema.</p>
+
+    <h2>Como Nossa Proposta Ajuda 🌱</h2>
+    <p>Nosso objetivo é incentivar um turismo mais consciente e sustentável, que preserve as belezas de São Tomé das Letras e valorize quem vive aqui.</p>
+
+    <h2>💬 Conscientização</h2>
+    <p>Trazemos dicas e informações simples para que cada visitante saiba como aproveitar o destino de forma responsável.</p>
+
+    <h2>🛍️ Apoio ao comércio local</h2>
+    <p>Valorizamos produtores e artesãos da região, ajudando a economia local e reduzindo o impacto ambiental do transporte de produtos de fora.</p>
+
+    <h2>🚯 Menos lixo, mais atitude</h2>
+    <p>Incentivamos o uso de garrafas reutilizáveis, ecobags e produtos sustentáveis, para diminuir os resíduos gerados durante a viagem.</p>
+
+    <h2>🧭 Respeito ao espaço</h2>
+    <p>Mostramos como visitar trilhas, cachoeiras e pontos turísticos sem causar danos ao ambiente ou à cultura local.</p>
+
+    <h2>📣 Participação dos visitantes</h2>
+    <p>Acreditamos que cada turista pode fazer parte da mudança. Por isso, convidamos você a deixar seu relato e suas ideias na aba
+      <a href="feedback.html" class="link">Feedback</a>.
+    </p>
+
+    <br>
+    <p><strong>Viajar com consciência é a melhor forma de preservar São Thomé das Letras.</strong></p>
+  </main>
+</body>
+</html>
