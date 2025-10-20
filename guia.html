@@ -1,194 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicas Essenciais - EcoMística</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dicas Essenciais - EcoMística</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-        html, body {
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
 
-        body {
-            background-image: url('imagens/turismo.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 120px;
-        }
+    body {
+      background-image: url('turismo.jpg'); /* agora no mesmo nível */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 120px; /* espaço para a logo no topo */
+      color: #f8f9fa;
+    }
 
-        /* camada translúcida */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 40, 15, 0.45);
-            z-index: 0;
-        }
+    /* camada translúcida escura sobre o fundo (mantida) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 15, 0.55);
+      z-index: 0;
+    }
 
-        /* cabeçalho e logo */
-        header {
-            position: absolute;
-            top: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 2;
-        }
+    /* cabeçalho / logo (no topo, não fixa) */
+    header {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
 
-        header img {
-            height: 80px;
-        }
+    header img {
+      height: 80px;
+      position: relative;
+      z-index: 2;
+    }
 
-        /* botão de voltar */
-        .voltar {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            font-size: 28px;
-            color: #d8f3dc;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            z-index: 3;
-        }
+    /* botão de voltar (fixo) */
+    .voltar {
+      position: fixed;
+      top: 30px;
+      left: 40px;
+      font-size: 28px;
+      color: #d8f3dc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 3;
+    }
+    .voltar:hover { color: #ffffff; }
 
-        .voltar:hover {
-            color: white;
-        }
+    /* conteúdo principal - sem caixa de fundo, direto sobre o overlay */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: calc(100% - 40px);
+      padding: 30px 20px;
+      margin: 20px 0 80px;
+      color: #f8f9fa;
+      line-height: 1.8;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      /* sem background, sem borda, sem sombra — texto direto sobre o overlay */
+    }
 
-        /* conteúdo principal */
-        main {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #d8f3dc;
-            padding: 40px 50px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
-            line-height: 1.8;
-            margin-bottom: 100px;
-        }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 600;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #ffffff;
-            font-size: 28px;
-        }
+    h2 {
+      color: #b7efc5;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 600;
+    }
 
-        h2 {
-            color: #b7efc5;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+      font-size: 18px;
+    }
 
-        p {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
+    /* links finais */
+    .link {
+      color: #b7efc5;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .link:hover { color: #ffffff; text-decoration: underline; }
 
-        /* links finais */
-        .link {
-            color: #b7efc5;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .link:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header img {
-                height: 60px;
-            }
-
-            .voltar {
-                font-size: 24px;
-                left: 20px;
-            }
-
-            main {
-                width: 90%;
-                padding: 30px 25px;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      header img { height: 60px; }
+      .voltar { font-size: 24px; left: 20px; }
+      main { padding: 22px 16px; }
+      h1 { font-size: 22px; }
+      p { font-size: 16px; }
+    }
+  </style>
 </head>
 
 <body>
-    <a href="index.html" class="voltar">←</a>
+  <a href="index.html" class="voltar">←</a>
 
-    <header>
-        <img src="imagens/logo.png" alt="Logo EcoMística">
-    </header>
+  <header>
+    <img src="logo.png" alt="Logo EcoMística"> <!-- logo no mesmo nível -->
+  </header>
 
-    <main>
-        <h1>Dicas Essenciais para Visitar São Tomé das Letras</h1>
+  <main>
+    <h1>Dicas Essenciais para Visitar São Tomé das Letras</h1>
 
-        <h2>Transporte</h2>
-        <p>Prefira ir a pé ou de bicicleta para explorar o centro e atrações próximas.</p>
-        <p>Use transporte público ou caronas compartilhadas sempre que possível.</p>
+    <h2>Transporte</h2>
+    <p>Prefira ir a pé ou de bicicleta para explorar o centro e atrações próximas.</p>
+    <p>Use transporte público ou caronas compartilhadas sempre que possível.</p>
 
-        <h2>Preparando a Mochila</h2>
-        <p>Leve mochila leve com água, lanches e uma muda de roupa extra.</p>
-        <p>Não esqueça calçado confortável, chapéu, óculos de sol e protetor solar.</p>
-        <p>Leve capa de chuva ou agasalho, dependendo da estação.</p>
-        <p>Tenha um carregador portátil para celular ou câmera.</p>
-        <p>Kit básico de primeiros socorros pode ser útil em trilhas ou passeios mais longos.</p>
+    <h2>Preparando a Mochila</h2>
+    <p>Leve mochila leve com água, lanches e uma muda de roupa extra.</p>
+    <p>Não esqueça calçado confortável, chapéu, óculos de sol e protetor solar.</p>
+    <p>Leve capa de chuva ou agasalho, dependendo da estação.</p>
+    <p>Tenha um carregador portátil para celular ou câmera.</p>
+    <p>Kit básico de primeiros socorros pode ser útil em trilhas ou passeios mais longos.</p>
 
-        <h2>Hidrate-se e Alimente-se</h2>
-        <p>Sempre tenha garrafa reutilizável para se manter hidratado.</p>
-        <p>Prefira lanches leves e evite embalagens descartáveis.</p>
-        <p>Experimente comidas típicas e produtos artesanais locais, ajudando o comércio local.</p>
-        <p>Evite exageros em alimentos ultraprocessados, para se sentir melhor durante as caminhadas.</p>
+    <h2>Hidrate-se e Alimente-se</h2>
+    <p>Sempre tenha garrafa reutilizável para se manter hidratado.</p>
+    <p>Prefira lanches leves e evite embalagens descartáveis.</p>
+    <p>Experimente comidas típicas e produtos artesanais locais, ajudando o comércio local.</p>
+    <p>Evite exageros em alimentos ultraprocessados, para se sentir melhor durante as caminhadas.</p>
 
-        <h2>Exploração e Aventuras</h2>
-        <p>Use lanterna ou headlamp para grutas e lugares escuros.</p>
-        <p>Respeite trilhas, cachoeiras e mirantes; não mexa em plantas ou pedras.</p>
-        <p>Planeje horários: algumas atrações ficam lotadas em determinados períodos.</p>
-        <p>Converse com moradores: eles sempre têm dicas secretas de lugares menos conhecidos.</p>
-        <p>Tire fotos de forma consciente, sem interferir no ambiente natural ou histórico.</p>
+    <h2>Exploração e Aventuras</h2>
+    <p>Use lanterna ou headlamp para grutas e lugares escuros.</p>
+    <p>Respeite trilhas, cachoeiras e mirantes; não mexa em plantas ou pedras.</p>
+    <p>Planeje horários: algumas atrações ficam lotadas em determinados períodos.</p>
+    <p>Converse com moradores: eles sempre têm dicas secretas de lugares menos conhecidos.</p>
+    <p>Tire fotos de forma consciente, sem interferir no ambiente natural ou histórico.</p>
 
-        <h2>Sustentabilidade e Respeito</h2>
-        <p>Não jogue lixo no chão; use lixeiras ou leve seu lixo de volta.</p>
-        <p>Evite produtos plásticos descartáveis e leve sacola reutilizável para compras.</p>
-        <p>Compartilhe suas experiências online incentivando práticas sustentáveis.</p>
-        <p>Respeite horários de silêncio e a tranquilidade do local, especialmente em áreas naturais.</p>
+    <h2>Sustentabilidade e Respeito</h2>
+    <p>Não jogue lixo no chão; use lixeiras ou leve seu lixo de volta.</p>
+    <p>Evite produtos plásticos descartáveis e leve sacola reutilizável para compras.</p>
+    <p>Compartilhe suas experiências online incentivando práticas sustentáveis.</p>
+    <p>Respeite horários de silêncio e a tranquilidade do local, especialmente em áreas naturais.</p>
 
-        <br><br>
-        <p>Para mais ideias de onde visitar e conhecer, acesse a nossa página 
-            <a href="comercio-local.html" class="link">Comércio Local</a>.
-        </p>
-        <p>E depois da sua visita, registre como foi a experiência na nossa aba 
-            <a href="feedback.html" class="link">Feedback</a>.
-        </p>
-    </main>
+    <br>
+
+    <p>Para mais ideias de onde visitar e conhecer, acesse a nossa página
+      <a href="comercio.html" class="link">Comércio Local</a>.
+    </p>
+
+    <p>E depois da sua visita, registre como foi a experiência na nossa aba
+      <a href="feedback.html" class="link">Feedback</a>.
+    </p>
+  </main>
 </body>
 </html>
+
