@@ -21,7 +21,7 @@
         }
 
         body {
-            background-image: url('turismo.jpg'); /* Alterado para o mesmo nível */
+            background-image: url('turismo.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -30,7 +30,7 @@
             align-items: center;
             justify-content: flex-start;
             position: relative;
-            padding-top: 120px; /* espaço para não sobrepor o conteúdo */
+            padding-top: 60px; /* reduzido porque a logo não é mais fixa */
         }
 
         /* camada translúcida */
@@ -43,16 +43,6 @@
             height: 100%;
             background: rgba(0, 40, 15, 0.45);
             z-index: 0;
-        }
-
-        /* logo fixa no topo */
-        .logo-fixa {
-            position: fixed;
-            top: 20px; /* distância do topo */
-            left: 50%;
-            transform: translateX(-50%);
-            height: 80px;
-            z-index: 3;
         }
 
         /* botão de voltar */
@@ -70,6 +60,13 @@
 
         .voltar:hover {
             color: white;
+        }
+
+        /* logo comum (não fixa) */
+        .logo {
+            height: 80px;
+            margin: 40px 0;
+            z-index: 1;
         }
 
         /* área das imagens principais */
@@ -90,10 +87,37 @@
             max-width: 900px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .imagens-container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* estilo da imagem em tela cheia */
+        .imagem-fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: zoom-out;
+        }
+
+        .imagem-fullscreen img {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 10px;
         }
 
         @media (max-width: 768px) {
-            .logo-fixa {
+            .logo {
                 height: 60px;
             }
 
@@ -113,12 +137,32 @@
     <!-- botão de voltar fixo -->
     <a href="index.html" class="voltar">←</a>
 
-    <!-- logo fixa no topo -->
-    <img src="logo.png" alt="Logo EcoMística" class="logo-fixa">
+    <!-- logo que rola junto -->
+    <img src="logo.png" alt="Logo EcoMística" class="logo">
 
     <main class="imagens-container">
         <img src="mapa.png" alt="Mapa do projeto">
         <img src="qrcode.png" alt="QR Code do projeto">
     </main>
+
+    <script>
+        // Script para abrir imagem em tela cheia
+        document.querySelectorAll('.imagens-container img').forEach(img => {
+            img.addEventListener('click', () => {
+                const overlay = document.createElement('div');
+                overlay.classList.add('imagem-fullscreen');
+
+                const fullImg = document.createElement('img');
+                fullImg.src = img.src;
+                fullImg.alt = img.alt;
+
+                overlay.appendChild(fullImg);
+                document.body.appendChild(overlay);
+
+                // Fechar ao clicar
+                overlay.addEventListener('click', () => overlay.remove());
+            });
+        });
+    </script>
 </body>
 </html>
