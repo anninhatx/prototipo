@@ -16,7 +16,7 @@
     }
 
     body {
-      background-image: url('turismo.jpg'); /* agora no mesmo nível */
+      background-image: url('turismo.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -24,11 +24,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 120px; /* espaço para a logo no topo */
+      padding-top: 120px; /* espaço para a logo */
       color: #f8f9fa;
     }
 
-    /* camada translúcida escura sobre o fundo (mantida) */
     body::before {
       content: "";
       position: fixed;
@@ -40,7 +39,6 @@
       z-index: 0;
     }
 
-    /* cabeçalho / logo (no topo, não fixa) */
     header {
       position: absolute;
       top: 20px;
@@ -56,7 +54,6 @@
       z-index: 2;
     }
 
-    /* botão de voltar (fixo) */
     .voltar {
       position: fixed;
       top: 30px;
@@ -70,7 +67,6 @@
     }
     .voltar:hover { color: #ffffff; }
 
-    /* conteúdo principal - sem caixa de fundo, direto sobre o overlay */
     main {
       position: relative;
       z-index: 1;
@@ -81,12 +77,11 @@
       color: #f8f9fa;
       line-height: 1.8;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-      /* sem background, sem borda, sem sombra — texto direto sobre o overlay */
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       color: #ffffff;
       font-size: 28px;
       font-weight: 600;
@@ -94,22 +89,33 @@
 
     h2 {
       color: #b7efc5;
-      margin-top: 22px;
-      margin-bottom: 8px;
+      margin-top: 50px; /* espaço maior entre subtópicos */
+      margin-bottom: 6px; /* espaço entre título e lista */
       font-size: 20px;
       font-weight: 600;
     }
 
-    p {
-      margin-bottom: 12px;
-      text-align: justify;
+    ul {
+      list-style-type: disc;
+      margin-left: 25px;
+      margin-bottom: 0; /* lista próxima do título */
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 2px; /* itens da lista próximos */
       font-size: 18px;
     }
 
-    /* links finais */
+    .final {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
     .link {
       color: #b7efc5;
-      font-weight: 600;
       text-decoration: none;
     }
     .link:hover { color: #ffffff; text-decoration: underline; }
@@ -119,7 +125,8 @@
       .voltar { font-size: 24px; left: 20px; }
       main { padding: 22px 16px; }
       h1 { font-size: 22px; }
-      p { font-size: 16px; }
+      h2 { font-size: 18px; }
+      ul li, .final { font-size: 16px; }
     }
   </style>
 </head>
@@ -128,51 +135,58 @@
   <a href="index.html" class="voltar">←</a>
 
   <header>
-    <img src="logo.png" alt="Logo EcoMística"> <!-- logo no mesmo nível -->
+    <img src="logo.png" alt="Logo EcoMística">
   </header>
 
   <main>
     <h1>Dicas Essenciais para Visitar São Thomé das Letras</h1>
 
     <h2>Transporte</h2>
-    <p>- Prefira ir a pé ou de bicicleta para explorar o centro e atrações próximas.</p>
-    <p>- Use transporte público ou caronas compartilhadas sempre que possível.</p>
+    <ul>
+      <li>Prefira ir a pé ou de bicicleta para explorar o centro e atrações próximas.</li>
+      <li>Use transporte público ou caronas compartilhadas sempre que possível.</li>
+    </ul>
 
     <h2>Preparando a Mochila</h2>
-    <p>- Leve mochila leve com água, lanches e uma muda de roupa extra.</p>
-    <p>- Não esqueça calçado confortável, chapéu, óculos de sol e protetor solar.</p>
-    <p>- Leve capa de chuva ou agasalho, dependendo da estação.</p>
-    <p>- Tenha um carregador portátil para celular ou câmera.</p>
-    <p>- Kit básico de primeiros socorros pode ser útil em trilhas ou passeios mais longos.</p>
+    <ul>
+      <li>Leve mochila leve com água, lanches e uma muda de roupa extra.</li>
+      <li>Não esqueça calçado confortável, chapéu, óculos de sol e protetor solar.</li>
+      <li>Leve capa de chuva ou agasalho, dependendo da estação.</li>
+      <li>Tenha um carregador portátil para celular ou câmera.</li>
+      <li>Kit básico de primeiros socorros pode ser útil em trilhas ou passeios mais longos.</li>
+    </ul>
 
     <h2>Hidrate-se e Alimente-se</h2>
-    <p>- Sempre tenha garrafa reutilizável para se manter hidratado.</p>
-    <p>- Prefira lanches leves e evite embalagens descartáveis.</p>
-    <p>- Experimente comidas típicas e produtos artesanais locais, ajudando o comércio local.</p>
-    <p>- Evite exageros em alimentos ultraprocessados, para se sentir melhor durante as caminhadas.</p>
+    <ul>
+      <li>Sempre tenha garrafa reutilizável para se manter hidratado.</li>
+      <li>Prefira lanches leves e evite embalagens descartáveis.</li>
+      <li>Experimente comidas típicas e produtos artesanais locais, ajudando a economia local.</li>
+      <li>Evite exageros em alimentos ultraprocessados, para se sentir melhor durante as caminhadas.</li>
+    </ul>
 
     <h2>Exploração e Aventuras</h2>
-    <p>- Use lanterna ou headlamp para grutas e lugares escuros.</p>
-    <p>- Respeite trilhas, cachoeiras e mirantes; não mexa em plantas ou pedras.</p>
-    <p>- Planeje horários: algumas atrações ficam lotadas em determinados períodos.</p>
-    <p>- Converse com moradores: eles sempre têm dicas secretas de lugares menos conhecidos.</p>
-    <p>- Tire fotos de forma consciente, sem interferir no ambiente natural ou histórico.</p>
+    <ul>
+      <li>Use lanterna ou headlamp para grutas e lugares escuros.</li>
+      <li>Respeite trilhas, cachoeiras e mirantes; não mexa em plantas ou pedras.</li>
+      <li>Planeje horários: algumas atrações ficam lotadas em determinados períodos.</li>
+      <li>Converse com moradores: eles sempre têm dicas secretas de lugares menos conhecidos.</li>
+      <li>Tire fotos de forma consciente, sem interferir no ambiente natural ou histórico.</li>
+    </ul>
 
     <h2>Sustentabilidade e Respeito</h2>
-    <p>- Não jogue lixo no chão; use lixeiras ou leve seu lixo de volta.</p>
-    <p>- Evite produtos plásticos descartáveis e leve sacola reutilizável para compras.</p>
-    <p>- Compartilhe suas experiências online incentivando práticas sustentáveis.</p>
-    <p>- Respeite horários de silêncio e a tranquilidade do local, especialmente em áreas naturais.</p>
+    <ul>
+      <li>Não jogue lixo no chão; use lixeiras ou leve seu lixo de volta.</li>
+      <li>Evite produtos plásticos descartáveis e leve sacola reutilizável para compras.</li>
+      <li>Compartilhe suas experiências online incentivando práticas sustentáveis.</li>
+      <li>Respeite horários de silêncio e a tranquilidade do local, especialmente em áreas naturais.</li>
+    </ul>
 
-    <br>
-
-    <p>Para ideias de onde visitar e conhecer, acesse a nossa página
-      <a href="comercio.html" class="link">Comércio Local</a>.
-    </p>
-
-    <p>E depois da sua visita, registre como foi a experiência na nossa aba
+    <div class="final">
+      Para mais ideias de onde visitar e conhecer, acesse a nossa página
+      <a href="comercio.html" class="link">Comércio Local</a>.<br><br>
+      E depois da sua visita, registre como foi a experiência na nossa aba
       <a href="feedback.html" class="link">Feedback</a>.
-    </p>
+    </div>
   </main>
 </body>
 </html>
